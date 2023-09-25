@@ -8,52 +8,57 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedName: String = ""
-    @State private var selectedAge: Int = 0
-    let names = ["Alice", "Bob", "Charlie"]
-    let ageRange = 1...100 // Adjust the range as needed
+    
+    @State private var students: [Student] = [
+        Student(firstName: "Connor", lastName: "Welge", age: 16),
+        Student(firstName: "Niklas", lastName: "Rittel", age: 16),
+        Student(firstName: "Martin", lastName: "Kloster", age: 66),
+        Student(firstName: "Mertel", lastName: "Specht", age: 28),
+        Student(firstName: "Luisa", lastName: "Gottland", age: 12),
+        Student(firstName: "Omega", lastName: "Küppner", age: 1934),
+        Student(firstName: "Olaf", lastName: "Schulz", age: 50)
+    ]
+    
+    @State private var firstName: String = ""
+    @State private var lastName: String = ""
+    @State private var age: String = ""
     
     var body: some View {
         NavigationView {
-            Form {
-                Section {
-                    Picker("Wähle einen namen", selection: $selectedName) {
-                        ForEach(names, id: \.self) { name in
-                            Text(name).tag(name)
-                        }
+            VStack {
+                List {
+                    ForEach(students) { student in
+                        Text("\(student.firstName) \(student.lastName), Alter: \(student.age)")
                     }
                 }
-                
-                if selectedName != "" {
-                    Section {
-                        Text("Name: \(selectedName)")
-                    }
-                    
-                    Section {
-                        Picker("Wähle ein Alter", selection: $selectedAge) {
-                            ForEach(ageRange, id: \.self) { age in
-                                Text("\(age)").tag(age)
+            
+                Form {
+                    Section(header: Text("Schüler Hinzufügen")) {
+                        TextField("Vorname", text: $firstName)
+                        TextField("Nachname", text: $lastName)
+                        TextField("Alter", text: $age)
+                            .keyboardType(.numberPad)
+                        Button(action: {
+                            if let age = Int(age) {
+                                let newStudent = Student(firstName: firstName, lastName: lastName, age: age)
+                                students.append(newStudent)
+                                clearFields()
                             }
-                        }
-                        .pickerStyle(WheelPickerStyle())
-                    }
-                    
-                    Section {
-                        Text("Alter: \(selectedAge)")
-                    }
-                }
-                
-                if selectedAge > 0 {
-                    Section {
-                        NavigationLink(destination: Test(Alter: Double(selectedAge), Benutzername: selectedName)) {
-                            Text("Show Another View")
-                        }
+                        }) { Text("Hinzufügen") }
                     }
                 }
             }
-            .navigationTitle("Wähle dein Chrakter")
+            
+            .navigationTitle("Alle Schüler")
         }
     }
+    
+    private func clearFields() {
+        firstName = ""
+        lastName = ""
+        age = ""
+    }
+    
 }
 
 #Preview {
