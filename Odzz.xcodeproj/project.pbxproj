@@ -16,6 +16,7 @@
 		80254E052AC1B89C004905A5 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80254E042AC1B89C004905A5 /* Structs.swift */; };
 		804C0ED32AC2C99E0003CEBE /* ListSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804C0ED22AC2C99E0003CEBE /* ListSelect.swift */; };
 		80EDB5742AC55F0100652CA4 /* students.json in Resources */ = {isa = PBXBuildFile; fileRef = 80EDB5732AC55F0100652CA4 /* students.json */; };
+		80EDB5762AC5B0DC00652CA4 /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EDB5752AC5B0DC00652CA4 /* JSONManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		80254E042AC1B89C004905A5 /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		804C0ED22AC2C99E0003CEBE /* ListSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSelect.swift; sourceTree = "<group>"; };
 		80EDB5732AC55F0100652CA4 /* students.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = students.json; sourceTree = "<group>"; };
+		80EDB5752AC5B0DC00652CA4 /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		80254DED2AC1B0D1004905A5 /* Odzz */ = {
 			isa = PBXGroup;
 			children = (
+				80EDB5772AC5B0FD00652CA4 /* JSON */,
 				80EDB5732AC55F0100652CA4 /* students.json */,
 				80254E032AC1B879004905A5 /* Struct */,
 				80254E012AC1B3DB004905A5 /* ContentView.swift */,
@@ -70,7 +73,6 @@
 				80254DF22AC1B0D3004905A5 /* Assets.xcassets */,
 				80254DF42AC1B0D3004905A5 /* Odzz.entitlements */,
 				80254DF52AC1B0D3004905A5 /* Preview Content */,
-				80254DFD2AC1B1C6004905A5 /* Test.swift */,
 			);
 			path = Odzz;
 			sourceTree = "<group>";
@@ -86,6 +88,7 @@
 		80254E002AC1B3B7004905A5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				80254DFD2AC1B1C6004905A5 /* Test.swift */,
 				80254DF02AC1B0D1004905A5 /* CustomSelect.swift */,
 				804C0ED22AC2C99E0003CEBE /* ListSelect.swift */,
 			);
@@ -98,6 +101,14 @@
 				80254E042AC1B89C004905A5 /* Structs.swift */,
 			);
 			path = Struct;
+			sourceTree = "<group>";
+		};
+		80EDB5772AC5B0FD00652CA4 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				80EDB5752AC5B0DC00652CA4 /* JSONManager.swift */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80254DF12AC1B0D1004905A5 /* CustomSelect.swift in Sources */,
+				80EDB5762AC5B0DC00652CA4 /* JSONManager.swift in Sources */,
 				80254DEF2AC1B0D1004905A5 /* OdzzApp.swift in Sources */,
 				80254E052AC1B89C004905A5 /* Structs.swift in Sources */,
 				80254E022AC1B3DB004905A5 /* ContentView.swift in Sources */,
