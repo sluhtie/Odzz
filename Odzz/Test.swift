@@ -9,29 +9,14 @@ import Foundation
 import SwiftUI
 
 struct Test: View {
-    private var name: String = ""
+    @Environment(\.dismiss) var dismiss
+    
     private var firstName: String = ""
     private var lastName: String = ""
-    private var age: Double
+    private var age: Int
     
-    init(Benutzername iName: String) {
-        let iAge: Double = 0
-        self.age = iAge
-        
-        let testName: String = "Hallo \(iName) \(Int(age))"
-        self.name = testName
-    }
-    
-    init(Alter iAge: Double, Benutzername iName: String) {
-        let age: Double = iAge
-        self.age = age
-        
-        let name: String = iName
-        self.name = name
-    }
-    
-    init(Alter iAge: Double, Vorname iFirstName: String, Nachname iLastName: String) {
-        let age: Double = iAge
+    init(Alter iAge: Int, Vorname iFirstName: String, Nachname iLastName: String) {
+        let age: Int = iAge
         self.age = age
         
         let firstName: String = iFirstName
@@ -42,20 +27,34 @@ struct Test: View {
     }
     
     var body: some View {
-        HStack {
-            if(age < 20) {
-                Text("Hallo Digga")
-            } else if firstName == "" {
-                Text("Hallo \(name), du bist \(Int(age)) Jahre altr")
-            } else {
-                Text("Du bist \(firstName) \(lastName) und du bist \(Int(age)) Jahre alt")
+        
+        Button("Zurück", systemImage: "chevron.backward") {
+            dismiss()
+        }
+//        .navigationTitle("Detail View")
+        .navigationBarBackButtonHidden(true)
+        
+        NavigationView {
+            HStack {
+                if(age < 20) {
+                    Text("Hallo \(firstName) \(lastName), du bist \(Int(age)) Jahre alt")
+                        .padding()
+                        .background(.red)
+                        .foregroundStyle(.white)
+                } else {
+                    Text("Hallo \(firstName) \(lastName), du bist \(Int(age)) Jahre alt")
+                        .padding()
+                        .background(.green)
+                        .foregroundStyle(.white)
+                }
             }
         }
+        
     }
 }
 
 
 #Preview {
 //    Test(Benutzername: "Connor")
-    Test(Alter: 16, Benutzername: "Connor")
+    Test(Alter: 16, Vorname: "Connor", Nachname: "Welge")
 }
