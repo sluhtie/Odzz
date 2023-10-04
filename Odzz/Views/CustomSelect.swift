@@ -41,9 +41,9 @@ struct CustomSelect: View {
                     }
                 }
                 
-                Section {
-                    Text("Name: \(selection.firstName) \(selection.lastName)")
-                }
+//                Section {
+//                    Text("Name: \(selection.firstName) \(selection.lastName)")
+//                }
                 
                 
                 

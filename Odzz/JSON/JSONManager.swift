@@ -7,10 +7,11 @@
 
 import Foundation
 
-// MARK: - Person
 struct Person: Codable {
-    let firstName, lastName: String
+    let firstname, lastname: String
     let age: Int
+    let country, state: String
+    let grade: Double
     
     // Generate samples
     static let allPeople: [Person] = Bundle.main.decode(file: "students.json")

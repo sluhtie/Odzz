@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    private var people: [Person] = Person.allPeople
+    
     var body: some View {
+        
         NavigationView {
             Form {
                 Section {
@@ -19,6 +22,14 @@ struct ContentView: View {
                     
                     NavigationLink(destination: ListSelect() .navigationBarBackButtonHidden(true)) {
                         Text("List")
+                    }
+                }
+                
+                Section {
+                    List {
+                        ForEach(people, id: \.firstname) { person in
+                            Text("\(person.firstname) \(person.lastname)")
+                        }
                     }
                 }
             }

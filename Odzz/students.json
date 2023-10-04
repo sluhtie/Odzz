@@ -1,9 +1,26 @@
-{
-    "firstName": "John",
-    "lastName": "McQueen",
-    "age": 22
-},
-    "firstName": "Elena",
-    "lastName": "Schmidt",
-    "age": 14
-}
+[
+    {
+      "firstname": "Connor",
+      "lastname": "Welge",
+      "age": 65,
+      "country": "germany",
+      "state": "hamburg",
+      "grade": 1
+    },
+    {
+      "firstname": "Elena",
+      "lastname": "Müller",
+      "age": 34,
+      "country": "germany",
+      "state": "bayern",
+      "grade": 3.78
+    },
+    {
+      "firstname": "Bela Jimmy",
+      "lastname": "Herzig",
+      "age": 19,
+      "country": "Germany",
+      "state": "Hamburg",
+      "grade": 6
+    }
+]
