@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct ListSelect: View {
+//    @Environment(\.dismiss) var dismiss
     
     @State private var students: [Student]
     @State private var firstName: String = ""
@@ -70,7 +71,7 @@ struct ListSelect: View {
                 }
             }
             .toolbar {
-                ToolbarItem {
+                ToolbarItem(placement: .topBarLeading) {
                     
                     NavigationLink(destination: ContentView(), label: {
                         Image(systemName: "arrow.left")
@@ -78,7 +79,7 @@ struct ListSelect: View {
                     })
                 }
                 
-                ToolbarItem {
+                ToolbarItem(placement: .topBarTrailing) {
                     
                     Button(action: {
                         isPopoverVisible.toggle()
