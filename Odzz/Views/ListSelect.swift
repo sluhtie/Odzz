@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct ListSelect: View {
-//    @Environment(\.dismiss) var dismiss
+    @Environment(\.dismiss) var dismiss
     
     @State private var students: [Student]
     @State private var firstName: String = ""
@@ -31,7 +31,8 @@ struct ListSelect: View {
         
         importStudentsFromJSON()
         
-        self.students = iStudents
+//        self.students = iStudents
+        self._students = State(initialValue: iStudents)
         
         func importStudentsFromJSON() {
             let people: [Person] = Person.allPeople
@@ -73,10 +74,12 @@ struct ListSelect: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     
-                    NavigationLink(destination: ContentView(), label: {
+                    Button(action: {
+                        dismiss()
+                    }) {
                         Image(systemName: "arrow.left")
-                            .imageScale(.large)
-                    })
+                    }
+                    
                 }
                 
                 ToolbarItem(placement: .topBarTrailing) {
