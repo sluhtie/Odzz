@@ -57,6 +57,7 @@ struct ListSelect: View {
                             label: {
                                 VStack(alignment: .leading) {
                                     Text("\(student.firstName) \(student.lastName)")
+                                    Test(Vorname: "dfghsdf", Nachname: "dfg")
                                     Text("Alter: \(student.age)")
                                         .font(.system(size: 12))
                                         .foregroundColor(.gray)
