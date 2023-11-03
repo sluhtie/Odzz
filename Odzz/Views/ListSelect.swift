@@ -64,6 +64,7 @@ struct ListSelect: View {
                                 }
                             }
                         )
+//                        jhefbgudfg
 //                        .navigationBarTitle("Hauptansicht", displayMode: .inline)
                     }
                     .onDelete { offsets in
