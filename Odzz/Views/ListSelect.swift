@@ -65,6 +65,7 @@ struct ListSelect: View {
                             }
                         )
 //                        .navigationBarTitle("Hauptansicht", displayMode: .inline)
+//                        dfigbiifg
                     }
                     .onDelete { offsets in
                         students.remove(atOffsets: offsets)
